@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiScrollViewIssue.MainPage">
+
+    <VerticalStackLayout>
+        <Button Text="Page with Scroll Issue" Clicked="btnScrollIssue" Margin="30" BackgroundColor="Red" />
+        <Button Text="Page with Scroll Working" Clicked="btnScrollWorking" Margin="30" BackgroundColor="Green" />
+        <Label Text="The page with the scroll issue works in Xamarin Forms but not in MAUI. The working page has the ScrollView directly under the AbsoluteLayout (parent StackLayout removed)." Margin="30" />
+    </VerticalStackLayout>
+</ContentPage>

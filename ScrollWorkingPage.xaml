@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiScrollViewIssue.ScrollWorkingPage"
+             Title="Scroll Working">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Entry">
+                <Setter Property="Margin" Value="0,0,0,20"/>
+            </Style>
+            <Style TargetType="Picker">
+                <Setter Property="Margin" Value="0,0,0,20"/>
+            </Style>
+            <Style x:Key="Title" TargetType="Label">
+                <Setter Property="FontSize" Value="Title" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="Margin" Value="0,0,0,30" />
+            </Style>
+            <Style x:Key="ActionButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#FF0C7CD6" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="Medium" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <AbsoluteLayout x:Name="LayoutRoot">
+        <ScrollView
+              AbsoluteLayout.LayoutFlags="All"
+              AbsoluteLayout.LayoutBounds="0,0,1,1">
+            <StackLayout Padding="10,10,10,300">
+                <Label Text="My Vehicle (WITH SCROLL WORKING)" Style="{StaticResource Title}" />
+                <Button x:Name="btnAddVehicle" Text="Add Vehicle" Style="{StaticResource ActionButton}" Margin="0,10" />
+                <Button x:Name="btnSelectSavedVehicle" Text="Select Previously Used Vehicle" Style="{StaticResource ActionButton}" Margin="0,0,0,10" />
+                <Label Text="Vehicle Owner:" Margin="0,10,0,0" />
+                <Picker x:Name="ddnVehicleOwner">
+                    <Picker.Items>
+                        <x:String>Tap to Select...</x:String>
+                        <x:String>Company Vehicle</x:String>
+                        <x:String>Non-company Vehicle</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Label x:Name="lblVehicleUnitID" Text="Unit ID:" />
+                <Entry x:Name="txtVehicleUnitID" 
+                        IsSpellCheckEnabled="False" IsTextPredictionEnabled="False" Margin="0" />
+                <Button x:Name="btnDownloadVehicle" Text="Download Details From Server" 
+                        BackgroundColor="LightGreen" TextColor="DarkGreen" Margin="0,0,0,20" />
+                <Label x:Name="lblAvlSystem" Text="AVL System:" IsVisible="{Binding AvlSystemIsVisible}"/>
+                <Entry x:Name="txtAvlSystem" Keyboard="Text" IsEnabled="False" />
+                <Label Text="Color:"/>
+                <Entry x:Name="txtVehicleColor" Keyboard="Text" />
+                <Label Text="Year:"/>
+                <Entry x:Name="txtVehicleYear" Keyboard="Numeric" />
+                <Label Text="Make:"/>
+                <Entry x:Name="txtVehicleMake" Keyboard="Text" />
+                <Label Text="Model:"/>
+                <Entry x:Name="txtVehicleModel" Keyboard="Text" />
+                <Label Text="License Plate:"/>
+                <Entry x:Name="txtVehicleLicensePlate" IsSpellCheckEnabled="False" IsTextPredictionEnabled="False" />
+            </StackLayout>
+        </ScrollView>
+    </AbsoluteLayout>
+
+</ContentPage>
